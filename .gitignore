@@ -1,0 +1,100 @@
+############################################
+# Node / MERN (ALL nested projects)
+############################################
+
+**/node_modules/
+**/jspm_packages/
+**/bower_components/
+
+# Build outputs
+**/dist/
+**/build/
+**/.next/
+**/out/
+**/coverage/
+
+# Logs
+**/*.log
+**/logs/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+
+############################################
+# Environment variables & secrets
+############################################
+
+**/.env
+**/.env.*
+!**/.env.example
+
+**/*.pem
+**/*.key
+**/*.crt
+
+############################################
+# TypeScript
+############################################
+
+**/*.tsbuildinfo
+
+############################################
+# React / Vite / CRA
+############################################
+
+**/.vite/
+**/.cache/
+**/.parcel-cache/
+
+############################################
+# Docker (IMPORTANT)
+############################################
+
+# Docker runtime & temp files
+**/.docker/
+**/.doc**
+
+
+############################################
+# Docker (ALL nested projects)
+############################################
+
+# Docker runtime / temp
+**/.docker/
+**/.docker-temp/
+**/.docker-cache/
+
+# Docker Compose overrides
+**/docker-compose.override.yml
+**/docker-compose.*.override.yml
+
+# Docker volumes & bind mounts
+**/docker-data/
+**/volumes/
+**/volume/
+**/data/
+**/db-data/
+**/database/
+**/mongo-data/
+**/mysql-data/
+**/postgres-data/
+**/pg-data/
+**/redis-data/
+**/rabbitmq-data/
+**/es-data/
+**/elastic-data/
+docker-volumes
+
+# Docker secrets
+**/secrets/
+**/*.secret
+**/*.env.docker
+
+# Docker logs
+**/docker-logs/
+**/*.docker.log
+
+# Docker generated files
+**/*.pid
+**/*.sock
