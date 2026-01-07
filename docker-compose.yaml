@@ -123,7 +123,7 @@ services:
       - ELASTIC_APM_SECRET_TOKEN=
       - PORT=4101
 
-  gatewar:
+  gateway:
     container_name: gateway_container
     build:
       context: "./server/1-gateway"
@@ -133,16 +133,23 @@ services:
       - 4101:4101
     env_file: "./server/1-gateway/.env"
     environment:
+      - GATEWAY_JWT_TOKEN=jkkh8dr7834n093824usdf
+      - SECRET_KEY_ONE=
+      - SECRET_KEY_TWO=
       - ENABLE_APM=0
       - NODE_ENV=development
-      - CLIENT_URL=http://localhost:3000
-      - RABBITMQ_ENDPOINT=amqp://admin:admin@localhost:5672/
-      - SENDER_EMAIL=donna.christiansen@ethereal.email
-      - SENDER_EMAIL_PASSWORD=VsT95nXTamm86VV7ba
-      - ELASTIC_SEARCH_URL=http://elasticsearch:9200
+      - CLIENT_URL=http://localhost:5173
+      - AUTH_BASE_URL=http://localhostL4002
+      - USERS_BASE_URL=http://localhostL4003
+      - GIG_BASE_URL=http://localhostL4004
+      - MESSAGE_BASE_URL=http://localhostL4005
+      - ORDER_BASE_URL=http://localhostL4006
+      - REVIEW_BASE_URL=http://localhostL4007
+      - REDIS_HOST=redis://redis_container:6379
+      - ELASTIC_SEARCH_URL=http://elasticsearch_container:9200
       - ELASTIC_APM_SERVER_URL=http://localhost:8200
       - ELASTIC_APM_SECRET_TOKEN=
-      - PORT=4101
+      - PORT=4100
 
 
 
