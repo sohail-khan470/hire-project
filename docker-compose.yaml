@@ -123,6 +123,30 @@ services:
       - ELASTIC_APM_SECRET_TOKEN=
       - PORT=4101
 
+  gatewar:
+    container_name: gateway_container
+    build:
+      context: "./server/1-gateway"
+      dockerfile: "Dockerfile"
+    restart: always
+    ports:
+      - 4101:4101
+    env_file: "./server/1-gateway/.env"
+    environment:
+      - ENABLE_APM=0
+      - NODE_ENV=development
+      - CLIENT_URL=http://localhost:3000
+      - RABBITMQ_ENDPOINT=amqp://admin:admin@localhost:5672/
+      - SENDER_EMAIL=donna.christiansen@ethereal.email
+      - SENDER_EMAIL_PASSWORD=VsT95nXTamm86VV7ba
+      - ELASTIC_SEARCH_URL=http://elasticsearch:9200
+      - ELASTIC_APM_SERVER_URL=http://localhost:8200
+      - ELASTIC_APM_SECRET_TOKEN=
+      - PORT=4101
+
+
+
+
 # VOLUMES SECTION MUST BE AT ROOT LEVEL (here)
 volumes:
   elasticsearch_data:
